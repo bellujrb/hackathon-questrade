@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^5.1.0
   toggle_switch: ^2.1.0
   percent_indicator: ^4.2.3
+  roundcheckbox: ^2.0.5
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +68,7 @@ flutter:
     - assets/logo.png
     - assets/tips.png
     - assets/girlstatus.png
+    - assets/term.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
