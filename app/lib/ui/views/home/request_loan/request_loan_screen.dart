@@ -1,11 +1,12 @@
 import 'package:app/ui/extensions/build_context_utils.dart';
 import 'package:app/ui/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
 
-import '../../components/header.dart';
-import '../../components/status_score.dart';
+import '../../../components/header.dart';
+import '../../../components/status_score.dart';
 import 'components_this_screen/request_loan.dart';
 
 class RequestLoanScreen extends StatelessWidget {
@@ -21,7 +22,7 @@ class RequestLoanScreen extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const Header(),
+                const Header(title: "Take Out Loan"),
                 SizedBox(
                   height: context.mediaHeight * 0.03,
                 ),
@@ -84,6 +85,9 @@ class TermContainer extends StatelessWidget {
             ),
           ),
           GestureDetector(
+            onTap: () {
+              Modular.to.navigate("successloan");
+            },
             child: Container(
               alignment: Alignment.center,
               width: context.mediaWidth * 0.8,

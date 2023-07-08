@@ -6,7 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import '../styles/colors.dart';
 
 class Header extends StatelessWidget {
-  const Header({Key? key}) : super(key: key);
+  final String title;
+  const Header({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class Header extends StatelessWidget {
             ),
           ),
           Text(
-            "Take Out Loan",
+            title,
             style: GoogleFonts.poppins(
                 textStyle: context.styleModifier.textMediumBoldBlack),
           ),

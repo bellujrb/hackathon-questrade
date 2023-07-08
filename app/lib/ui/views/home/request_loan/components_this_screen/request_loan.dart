@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-import '../../../components/input.dart';
-import '../../../styles/colors.dart';
+import '../../../../components/input.dart';
+import '../../../../styles/colors.dart';
 import 'custom_toggle.dart';
 
 class RequestLoan extends StatefulWidget {

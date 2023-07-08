@@ -55,12 +55,19 @@ class _HomeScreenState extends State<HomeScreen> {
                           title: 'Loan Hired',
                           icon: Icons.contact_mail,
                           function: () {
-
+                            Modular.to.navigate('perfomedloan');
                           },
                         ),
                         IconNavigation(
                           title: 'Pendencies',
                           icon: Icons.receipt_long,
+                          function: () {
+
+                          },
+                        ),
+                        IconNavigation(
+                          title: 'Joint Loan',
+                          icon: Icons.family_restroom,
                           function: () {
 
                           },

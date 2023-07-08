@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 
-import '../../../styles/colors.dart';
+import '../../../../styles/colors.dart';
 
 class CustomToggle extends StatelessWidget {
   const CustomToggle({Key? key}) : super(key: key);
