@@ -12,9 +12,10 @@ class AppTextStyles {
   }
 
   TextStyle get textMediumBoldBlack => TextStyle(
-    fontSize: 14,
+    fontSize: 16,
     color: AppColors.onSecondary,
-    fontWeight: FontWeight.w600
+    fontWeight: FontWeight.w600,
+    decoration: TextDecoration.none
   );
 }
 
