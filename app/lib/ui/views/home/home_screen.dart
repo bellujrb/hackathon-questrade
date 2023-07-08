@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           title: 'Support',
                           icon: Icons.support_agent,
                           function: () {
-
+                            Modular.to.navigate('support');
                           },
                         ),
                       ],
