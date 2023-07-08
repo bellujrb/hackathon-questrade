@@ -1,15 +1,65 @@
+import 'package:app/ui/extensions/build_context_utils.dart';
+import 'package:app/ui/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class RequestLoanScreen extends StatelessWidget {
   const RequestLoanScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: MaterialApp(
-        home: Center(
-          child: Text("Center"),
+    return Scaffold(
+      backgroundColor: AppColors.secondary,
+      body: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: SafeArea(
+          child: Column(
+            children: [
+              Header()
+            ],
+          ),
         ),
+      ),
+    );
+  }
+}
+
+class Header extends StatelessWidget {
+  const Header({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          GestureDetector(
+            onTap: () {
+              Modular.to.navigate("/home");
+            },
+            child: Container(
+              width: 42,
+              height: 42,
+              decoration: BoxDecoration(
+                color: AppColors.onPrimary,
+                borderRadius: BorderRadius.circular(16)
+              ),
+              child: const Icon(Icons.arrow_back_ios_new),
+            ),
+          ),
+          Text(
+            "Take Out Loan",
+            style: GoogleFonts.poppins(
+                textStyle: context.styleModifier.textMediumBoldBlack),
+          ),
+          SizedBox(
+            width: 75,
+            height: 35,
+            child: Image.asset('assets/logo.png'),
+          ),
+        ],
       ),
     );
   }
