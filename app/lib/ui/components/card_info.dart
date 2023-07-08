@@ -12,8 +12,8 @@ class InfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 97,
-      width: context.mediaWidth * 0.8,
+      height: 120,
+      width: context.mediaWidth * 0.9,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           color: AppColors.primary.withOpacity(0.8)),
@@ -24,7 +24,7 @@ class InfoCard extends StatelessWidget {
             margin: const EdgeInsets.only(
                 left: 5
             ),
-            width: context.mediaWidth * 0.4,
+            width: context.mediaWidth * 0.5,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,

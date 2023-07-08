@@ -7,8 +7,8 @@ import '../../../components/header.dart';
 import '../../../components/status_score.dart';
 import '../../../styles/colors.dart';
 
-class PendenciesScreen extends StatelessWidget {
-  const PendenciesScreen({Key? key}) : super(key: key);
+class PendenciesLoanScreen extends StatelessWidget {
+  const PendenciesLoanScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -109,11 +109,12 @@ class ItemSuccess extends StatelessWidget {
                     textStyle: context.styleModifier.textMediumBoldBlack),
               ),
               Container(
+                alignment: Alignment.center,
                 width: 82,
                 height: 21,
                 decoration: BoxDecoration(
                   color: AppColors.onSecondary,
-                  borderRadius: BorderRadius.circular(8)
+                  borderRadius: BorderRadius.circular(16)
                 ),
                 child: Text("Pay", style: GoogleFonts.poppins(
                   textStyle: context.styleModifier.textMediumCommonWhite

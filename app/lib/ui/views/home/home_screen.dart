@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           title: 'Pendencies',
                           icon: Icons.receipt_long,
                           function: () {
-
+                            Modular.to.navigate('pendencies');
                           },
                         ),
                         IconNavigation(
