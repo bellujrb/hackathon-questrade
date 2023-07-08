@@ -25,6 +25,12 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
     decoration: TextDecoration.none
   );
+  TextStyle get textBigBoldBlack => TextStyle(
+      fontSize: 30,
+      color: AppColors.onSecondary,
+      fontWeight: FontWeight.w600,
+      decoration: TextDecoration.none
+  );
 
   //White
   TextStyle get textMediumCommonWhite => TextStyle(
