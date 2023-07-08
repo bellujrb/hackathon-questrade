@@ -1,9 +1,11 @@
 import 'package:app/ui/components/icon_navigation.dart';
 import 'package:app/ui/components/image_user.dart';
+import 'package:app/ui/components/status_score.dart';
 import 'package:app/ui/components/tips.dart';
 import 'package:app/ui/extensions/build_context_utils.dart';
 import 'package:app/ui/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../components/card_with_score.dart';
@@ -39,24 +41,36 @@ class _HomeScreenState extends State<HomeScreen> {
                     SizedBox(
                       height: context.mediaHeight * 0.03,
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         IconNavigation(
                           title: 'Request Loan',
                           icon: Icons.request_page,
+                          function: () {
+                            Modular.to.navigate('requestloan');
+                          },
                         ),
                         IconNavigation(
                           title: 'Loan Hired',
                           icon: Icons.contact_mail,
+                          function: () {
+
+                          },
                         ),
                         IconNavigation(
                           title: 'Pendencies',
                           icon: Icons.receipt_long,
+                          function: () {
+
+                          },
                         ),
                         IconNavigation(
                           title: 'Support',
                           icon: Icons.support_agent,
+                          function: () {
+
+                          },
                         ),
                       ],
                     ),
@@ -67,56 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              Container(
-                width: context.mediaWidth * 1.0,
-                height: context.mediaHeight * 0.2,
-                alignment: AlignmentDirectional.center,
-                decoration: BoxDecoration(
-                  color: AppColors.primary,
-                ),
-                child: Container(
-                  width: context.mediaWidth * 0.9,
-                  height: context.mediaHeight * 0.15,
-                  decoration: BoxDecoration(
-                    border: Border.all(color: AppColors.onPrimary, width: 1),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: context.mediaWidth * 0.3,
-                        child: SizedBox(
-                          width: 196.4,
-                          height: 131,
-                          child: Image.asset('assets/girlstatus.png'),
-                        ),
-                      ),
-                      SizedBox(
-                        width: context.mediaWidth * 0.5,
-                        height: context.mediaHeight * 0.10,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Congratulations!",
-                              style: GoogleFonts.poppins(
-                                  textStyle:
-                                      context.styleModifier.textMediumBoldWhite),
-                            ),
-                            Text(
-                              "Your score has a good score! keep it up",
-                              style: GoogleFonts.poppins(
-                                  textStyle: context
-                                      .styleModifier.textMediumCommonWhite),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              const StatusScore()
             ],
           ),
         ),
