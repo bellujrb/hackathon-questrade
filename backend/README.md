@@ -61,3 +61,11 @@ Our goal is to provide loans with security and reliability, taking into account 
 
 - Hexagonal Architecture
 - Modular
+
+## Future
+
+I ended up choosing a monolithic architecture due to time constraints in the project development. Since I didn't have the opportunity to fully study and familiarize myself with the concepts and practices of microservices, I opted for a more comfortable and familiar approach.
+
+However, I recognize that microservices offer several advantages, such as scalability, flexibility, and the ability to develop and deploy independent components. If I had more time available, I would dedicate efforts to thoroughly study microservices and gradually migrate the project to this architecture.
+
+It's important to remember that architectural choices should be based on the project's needs, the team's skills, and the available resources. Although a monolithic architecture can be a viable option in certain circumstances, it's always valuable to seek learning opportunities and stay updated to explore other architectural approaches in the future.
