@@ -5,6 +5,7 @@ import { ScoreService } from '../score/score-service';
 import { LoanEntity } from 'src/entity/loan/loan-entity';
 import { LoanMake, LoanMax, UserLoan } from 'src/interface/loan/loan-interface';
 import { PrismaService } from 'src/config/prisma.service';
+import { StringRes } from 'src/interface/response/response-interface';
 
 @Injectable()
 export class LoanService extends BaseService {
@@ -116,7 +117,7 @@ export class LoanService extends BaseService {
     return { res: 'loan was sent', status: 200 };
   }
 
-  async loanMake(input: LoanMake) {
+  async loanMake(input: LoanMake): Promise<StringRes> {
     let relative: UserLoan;
     if (input.emailRelative) {
       relative = await this.repository.getLoanUser(input.emailRelative);

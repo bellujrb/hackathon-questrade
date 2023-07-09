@@ -15,7 +15,7 @@ export class EmailController {
     description:
       'sends an email to the user who asks for support saying that he will get in touch, to help him',
   })
-  @Get('/suport')
+  @Get('/support')
   async getSuport(@Headers() email: GetEmail): Promise<StringRes> {
     return await this.service.mailSuport(email.email);
   }

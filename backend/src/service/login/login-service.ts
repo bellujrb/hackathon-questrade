@@ -16,7 +16,7 @@ export class LoginService extends BaseService {
         await this.repository.putLogin(putLogin.email);
         return { res: 'User logged in', status: 200 };
       }
-      throw new Error(`Password incorrect`);
+      return { res: 'Password Incorrect', status: 401 };
     } catch (err) {
       throw new Error(err);
     }

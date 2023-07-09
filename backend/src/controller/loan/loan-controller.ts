@@ -6,6 +6,9 @@ import {
   LoanInputDto,
   PostMakeLoanDto,
 } from 'src/dto/loan/loan-dto';
+import { ScoreService } from '../../service';
+import { LoanEntity } from '../../entity/loan/loan-entity';
+import { PrismaService } from '../../config/prisma.service';
 import { LoanAllService } from 'src/service/loan/loanAll-service';
 import { StringRes } from 'src/interface/response/response-interface';
 import { UserLoan } from 'src/interface/loan/loan-interface';
@@ -56,7 +59,8 @@ export class LoanController {
   @ApiOkResponse({ type: [StringResDTO] })
   @ApiOperation({
     summary: 'Add the loan required by the customer to the base',
-    description: 'Add the loan required by the customer to the base, seeing if he is elderly or not.',
+    description:
+      'Add the loan required by the customer to the base, seeing if he is elderly or not.',
   })
   async loanMake(@Body() postMakeLoanDto: PostMakeLoanDto): Promise<StringRes> {
     return await this.service.loanMake(postMakeLoanDto);

@@ -10,7 +10,7 @@ export class LoginEntity {
           email: email,
         },
       });
-      if (user.isLogged == true) {
+      if (user != null && user.isLogged == true) {
         throw new Error(`User is Logged`);
       }
       if (user) {
