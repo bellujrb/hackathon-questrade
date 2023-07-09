@@ -109,7 +109,7 @@ class Header extends StatelessWidget {
           width: 30,
         ),
         Text(
-          "Victoria Morgan",
+          "Belluzzo",
           style: GoogleFonts.poppins(
               textStyle: context.styleModifier.textMediumBoldBlack),
         ),

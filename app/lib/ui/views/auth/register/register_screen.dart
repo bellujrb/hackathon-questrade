@@ -56,9 +56,8 @@ class RegisterScreen extends StatelessWidget {
                 Input(
                   title: 'Address',
                   label: "Type your Address",
-                  type: TextInputType.number,
+                  type: TextInputType.text,
                   width: context.mediaWidth * 0.9,
-                  numbersMax: 11,
                 ),
                 Input(
                   title: 'Income',
@@ -71,6 +70,7 @@ class RegisterScreen extends StatelessWidget {
                   title: 'Password',
                   label: "Type your password",
                   type: TextInputType.text,
+                  secureText: true,
                   width: context.mediaWidth * 0.9,
                 ),
                 GestureDetector(
