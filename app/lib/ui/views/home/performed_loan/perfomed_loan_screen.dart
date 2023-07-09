@@ -24,7 +24,12 @@ class PerfomedLoanScreen extends StatelessWidget {
                 SizedBox(
                   height: context.mediaHeight * 0.03,
                 ),
-                const InfoCard(title: "Support", subtitle: "No Recognize a loan? contact our support via email."),
+                const InfoCard(
+                  title: "Support",
+                  subtitle:
+                      "No Recognize a loan? contact our support via email.",
+                  img: 'assets/boy.png',
+                ),
                 SizedBox(
                   height: context.mediaHeight * 0.03,
                 ),
@@ -113,5 +118,3 @@ class ItemSuccess extends StatelessWidget {
     );
   }
 }
-
-

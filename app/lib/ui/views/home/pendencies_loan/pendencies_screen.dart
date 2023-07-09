@@ -24,7 +24,11 @@ class PendenciesLoanScreen extends StatelessWidget {
                 SizedBox(
                   height: context.mediaHeight * 0.03,
                 ),
-                const InfoCard(title: "Support", subtitle: "Did you pay the installment by any chance? If it was not accounted for, contact our support by email.."),
+                const InfoCard(
+                    title: "Support",
+                    subtitle: "Did you pay the installment by any chance? If it was not accounted for, contact our support by email..",
+                  img: 'assets/boy.png',
+                ),
                 SizedBox(
                   height: context.mediaHeight * 0.03,
                 ),

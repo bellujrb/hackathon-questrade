@@ -72,6 +72,8 @@ flutter:
     - assets/bank.png
     - assets/boy.png
     - assets/supporticon.png
+    - assets/elderly.png
+    - assets/attorney.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

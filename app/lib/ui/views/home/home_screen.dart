@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           title: 'Joint Loan',
                           icon: Icons.family_restroom,
                           function: () {
-
+                            Modular.to.navigate('jointloan');
                           },
                         ),
                         IconNavigation(

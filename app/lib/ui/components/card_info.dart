@@ -7,7 +7,8 @@ import '../styles/colors.dart';
 class InfoCard extends StatelessWidget {
   final String title;
   final String subtitle;
-  const InfoCard({Key? key, required this.title, required this.subtitle}) : super(key: key);
+  final String img;
+  const InfoCard({Key? key, required this.title, required this.subtitle, required this.img}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +48,7 @@ class InfoCard extends StatelessWidget {
           SizedBox(
             width: 119,
             height: 119,
-            child: Image.asset('assets/boy.png'),
+            child: Image.asset(img),
           )
         ],
       ),
