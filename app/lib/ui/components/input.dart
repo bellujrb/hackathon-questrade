@@ -32,43 +32,40 @@ class Input extends StatefulWidget {
 class _InputState extends State<Input> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(left: 18),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            widget.title,
-            textAlign: TextAlign.start,
-            style: GoogleFonts.poppins(
-              textStyle: context.styleModifier.textSmallCommonBlack,
-            ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          widget.title,
+          textAlign: TextAlign.start,
+          style: GoogleFonts.poppins(
+            textStyle: context.styleModifier.textSmallCommonBlack,
           ),
-          const SizedBox(
-            height: 8,
-          ),
-          SizedBox(
-            height: 70,
-            width: widget.width,
-            child: TextFormField(
-              key: widget.keyField,
-              keyboardType: widget.type,
-              maxLength: widget.numbersMax,
-              obscureText: widget.secureText ?? false,
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.only(left: 15),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                hintText: widget.label,
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        SizedBox(
+          height: 70,
+          width: widget.width,
+          child: TextFormField(
+            key: widget.keyField,
+            keyboardType: widget.type,
+            maxLength: widget.numbersMax,
+            obscureText: widget.secureText ?? false,
+            decoration: InputDecoration(
+              contentPadding: const EdgeInsets.only(left: 15),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              controller: widget.controller,
-              validator: widget.validation,
+              hintText: widget.label,
             ),
-          )
-        ],
-      ),
+            controller: widget.controller,
+            validator: widget.validation,
+          ),
+        )
+      ],
     );
   }
 }

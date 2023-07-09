@@ -1,3 +1,5 @@
+import 'package:app/ui/views/auth/login/login_screen.dart';
+import 'package:app/ui/views/auth/register/register_screen.dart';
 import 'package:app/ui/views/auth/welcome/welcome_screen.dart';
 import 'package:app/ui/views/home/home_screen.dart';
 import 'package:app/ui/views/home/joint_loan/joint_loan_screen.dart';
@@ -13,6 +15,8 @@ class AppModule extends Module {
   @override
   List<ModularRoute> get routes => [
     ChildRoute('/', child: (context, args) => const WelcomeScreen()),
+    ChildRoute('/login', child: (context, args) => const LoginScreen()),
+    ChildRoute('/register', child: (context, args) => const RegisterScreen()),
     ChildRoute('/home', child: (context, args) => const HomeScreen()),
     ChildRoute('/requestloan', child: (context, args) => const RequestLoanScreen()),
     ChildRoute('/successloan', child: (context, args) => const SuccessLoanScreen()),

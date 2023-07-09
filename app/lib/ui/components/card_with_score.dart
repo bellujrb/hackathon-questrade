@@ -2,7 +2,6 @@ import 'package:app/ui/extensions/build_context_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../styles/colors.dart';
 

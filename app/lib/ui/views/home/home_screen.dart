@@ -115,7 +115,9 @@ class Header extends StatelessWidget {
         ),
         IconButton(
           icon: const Icon(Icons.login_outlined),
-          onPressed: () {},
+          onPressed: () {
+            Modular.to.navigate('login');
+          },
         ),
         SizedBox(
           width: context.mediaWidth * 0.05,
