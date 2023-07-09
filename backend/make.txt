@@ -1,0 +1,13 @@
+//-> Post para o valor que ele quer do emprestimo e nome do emprestimo que ele quer fazer
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//-> Get apenas para o score
+//-> Get para todos os emprestimos Ativos
+//-> Get para todos os emprestimos Pagos
+//-> Get Login
+//-> Get para o valor do emprestimo em si e minimo do emprestimo
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+-> Boleto do emprestimo ativo
+-> Termos de responsabilidade
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+//-> Suporte atraves do email
+//-> Email para o usuario falando que foi aprovado ou não
