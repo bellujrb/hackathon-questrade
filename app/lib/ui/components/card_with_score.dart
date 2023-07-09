@@ -1,5 +1,8 @@
 import 'package:app/ui/extensions/build_context_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../styles/colors.dart';
 
@@ -9,7 +12,7 @@ class CardWithScore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: context.mediaHeight * 0.2,
+      height: context.mediaHeight * 0.3,
       width: context.mediaWidth * 0.8,
       decoration: ShapeDecoration(
         gradient: const LinearGradient(
@@ -27,6 +30,54 @@ class CardWithScore extends StatelessWidget {
             offset: const Offset(0, 0),
             spreadRadius: 0,
           )
+        ],
+      ),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Available for Loan",
+                    style: GoogleFonts.poppins(
+                        textStyle: context.styleModifier.textMediumCommonWhite),
+                  ),
+                  Text(
+                    "USD 25,000",
+                    style: GoogleFonts.poppins(
+                        textStyle: context.styleModifier.textMediumBoldWhite),
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 100,
+                height: 100,
+                child: Image.asset('assets/pork.png'),
+              )
+            ],
+          ),
+          CircularPercentIndicator(
+            radius: 60,
+            animation: true,
+            animationDuration: 1200,
+            lineWidth: 15.0,
+            percent: 0.7,
+            center: SizedBox(
+              width: 60,
+              child: Text(
+                "700/1000 in score",
+                style: GoogleFonts.poppins(
+                  textStyle: context.styleModifier.textMediumCommonWhite
+                ),
+              ),
+            ),
+            circularStrokeCap: CircularStrokeCap.butt,
+            backgroundColor: Colors.yellow,
+            progressColor: Colors.red,
+          ),
         ],
       ),
     );
