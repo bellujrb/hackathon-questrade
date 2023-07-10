@@ -9,7 +9,8 @@ import '../../../../styles/colors.dart';
 import 'custom_toggle.dart';
 
 class RequestLoan extends StatefulWidget {
-  const RequestLoan({Key? key}) : super(key: key);
+  final int? loan;
+  const RequestLoan({Key? key, required this.loan}) : super(key: key);
 
   @override
   State<RequestLoan> createState() => _RequestLoanState();
@@ -22,17 +23,20 @@ class _RequestLoanState extends State<RequestLoan> {
       width: context.mediaWidth * 0.9,
       height: context.mediaHeight * 0.3,
       decoration: BoxDecoration(
-          color: AppColors.onPrimary, borderRadius: BorderRadius.circular(8)),
+        color: AppColors.onPrimary,
+        borderRadius: BorderRadius.circular(8),
+      ),
       child: Column(
         children: [
           const SizedBox(
             height: 15,
           ),
           Input(
-              title: "Name Loan",
-              label: "Enter your name loan",
-              type: TextInputType.text,
-              width: context.mediaWidth * 0.8),
+            title: "Name Loan",
+            label: "Enter your name loan",
+            type: TextInputType.text,
+            width: context.mediaWidth * 0.8,
+          ),
           const CustomToggle(),
           const SizedBox(
             height: 15,
@@ -43,7 +47,7 @@ class _RequestLoanState extends State<RequestLoan> {
               Container(
                 margin: const EdgeInsets.only(top: 10),
                 child: Text(
-                  "R\$",
+                  "USD",
                   style: GoogleFonts.poppins(
                     textStyle: context.appTextStyles.textSmallCommonBlack,
                   ),
@@ -53,9 +57,10 @@ class _RequestLoanState extends State<RequestLoan> {
                 width: 5,
               ),
               Text(
-                "2000",
+                "${widget.loan}",
                 style: GoogleFonts.poppins(
-                    textStyle: context.appTextStyles.textBigBoldBlack),
+                  textStyle: context.appTextStyles.textBigBoldBlack,
+                ),
               ),
             ],
           ),
@@ -67,7 +72,9 @@ class _RequestLoanState extends State<RequestLoan> {
               lineHeight: 20.0,
               animationDuration: 2500,
               percent: 1.0,
-              center: const Text("R\$150 until R\$2000"),
+              center: Text(
+                "max value loan ${widget.loan ?? ''}",
+              ),
               progressColor: Colors.green,
             ),
           ),

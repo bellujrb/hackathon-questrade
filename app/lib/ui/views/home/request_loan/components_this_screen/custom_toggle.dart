@@ -14,7 +14,7 @@ class CustomToggle extends StatelessWidget {
       minWidth: 70,
       minHeight: 22.0,
       fontSize: 12.0,
-      initialLabelIndex: 0,
+      initialLabelIndex: 1,
       activeBgColor: [AppColors.primary],
       activeFgColor: Colors.white,
       inactiveBgColor: Colors.grey,
