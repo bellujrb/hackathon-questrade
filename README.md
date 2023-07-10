@@ -83,6 +83,8 @@ Our goal is to provide loans with security and reliability, taking into account 
 
 - Flutter Modular
 - Google Fonts
+- Http
+- Logger
 
 # Architecture Used (Mobile)
 
