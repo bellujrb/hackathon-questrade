@@ -4,7 +4,7 @@ class RegisterModel {
   String phone;
   String cpf;
   String address;
-  String income;
+  String current;
   String password;
 
   RegisterModel(
@@ -13,17 +13,17 @@ class RegisterModel {
       required this.phone,
       required this.cpf,
       required this.address,
-      required this.income,
+      required this.current,
       required this.password});
 
   Map<String, String> toMap() {
     return {
       'name': name,
-      'email': email,
+      'adress': address,
       'phone': phone,
-      'cpf': cpf,
-      'address': address,
-      'income': income,
+      'current': current,
+      'email': email,
+      'userId': cpf,
       'password': password,
     };
   }

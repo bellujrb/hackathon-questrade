@@ -10,7 +10,14 @@ import 'package:app/ui/views/home/success_loan/success_loan_screen.dart';
 import 'package:app/ui/views/home/support/support_screen.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'core/controller/auth/login_controller.dart';
+
 class AppModule extends Module {
+
+  @override
+  List<Bind> get binds => [
+    Bind.singleton((i) => LoginController())
+  ];
 
   @override
   List<ModularRoute> get routes => [

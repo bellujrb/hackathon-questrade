@@ -40,6 +40,8 @@ dependencies:
   toggle_switch: ^2.1.0
   percent_indicator: ^4.2.3
   roundcheckbox: ^2.0.5
+  logger: ^1.4.0
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
