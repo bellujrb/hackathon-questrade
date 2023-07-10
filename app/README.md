@@ -37,6 +37,8 @@ flutter run
 
 - Flutter Modular
 - Google Fonts
+- Http
+- Logger
 
 # Architecture Used (Mobile)
 
