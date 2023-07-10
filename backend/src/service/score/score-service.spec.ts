@@ -17,7 +17,7 @@ describe('ScoreService', () => {
   describe('calculerScore', () => {
     it('should calculate the score based on input', async () => {
       const input: ScoreInputDto = {
-        current: 10000,
+        current: '10000',
         userId: '40530725061',
       };
 
@@ -30,7 +30,7 @@ describe('ScoreService', () => {
 
     it('should handle no debtsOpen', async () => {
       const input: ScoreInputDto = {
-        current: 10000,
+        current: '10000',
         userId: '40530725061',
       };
       const expectedScore = 519;

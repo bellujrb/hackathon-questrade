@@ -7,6 +7,7 @@ import { parseISO, isBefore } from 'date-fns';
 @Injectable()
 export class ScoreService extends BaseService {
   async calculerScore(input: ScoreInputDto) {
+    const current = parseInt(input.current);
     let debtsOpen = persona.paymentHistory;
     if (debtsOpen) {
       let totalDebts: number = 0;
@@ -21,9 +22,9 @@ export class ScoreService extends BaseService {
       });
       let score: any;
 
-      const maxScore = 1000;    
+      const maxScore = 1000;
       const minScore = 0;
-      const incomeRatio = (input.current - totalDebts) / input.current;
+      const incomeRatio = (current - totalDebts) / current;
 
       score = Math.round(incomeRatio * maxScore);
       score = score - debtsOpen.length * 8;
@@ -32,6 +33,7 @@ export class ScoreService extends BaseService {
     }
   }
   maxMin() {
-    return { res: { min: 0, max: 1000 }, status: 200 };
+    
+    return { min: 0, max: 1000, status: 200 };
   }
 }

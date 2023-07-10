@@ -17,8 +17,8 @@ export class LoanInputDto {
   phone: string;
 
   @ApiProperty()
-  @IsNumber()
-  current: number;
+  @IsString()
+  current: string;
 
   @ApiProperty()
   @IsString()

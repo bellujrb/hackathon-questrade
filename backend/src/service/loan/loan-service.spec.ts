@@ -33,7 +33,7 @@ describe('LoanService', () => {
         name: 'string',
         adress: 'string',
         phone: 'string',
-        current: 0,
+        current: '0',
         email: 'test@gmail.com',
         userId: '40530725061',
         password: '4053012@AA',

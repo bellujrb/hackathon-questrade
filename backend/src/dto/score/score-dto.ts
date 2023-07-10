@@ -7,7 +7,7 @@ export class ScoreInputDto {
 
     @ApiProperty()
     @IsString()
-    current:number
+    current:string
 
     @ApiProperty()
     @IsString()
