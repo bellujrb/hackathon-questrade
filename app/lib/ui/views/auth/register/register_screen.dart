@@ -1,3 +1,4 @@
+import 'package:app/core/controller/auth/register_controller.dart';
 import 'package:app/ui/components/input.dart';
 import 'package:app/ui/extensions/build_context_utils.dart';
 import 'package:flutter/material.dart';
@@ -6,9 +7,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../styles/colors.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
+  final controller = RegisterController();
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,53 +37,67 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                Input(
-                    title: 'Name',
-                    label: "Type your name",
-                    type: TextInputType.text,
-                    width: context.mediaWidth * 0.9),
-                Input(
-                    title: 'E-mail',
-                    label: "Type your e-mail",
-                    type: TextInputType.text,
-                    width: context.mediaWidth * 0.9),
-                Input(
-                  title: 'Phone',
-                  label: "Type your phone",
-                  type: TextInputType.number,
-                  width: context.mediaWidth * 0.9,
-                  numbersMax: 11,
-                ),
-                Input(
-                  title: 'CPF',
-                  label: "Type your CPF",
-                  type: TextInputType.number,
-                  width: context.mediaWidth * 0.9,
-                  numbersMax: 11,
-                ),
-                Input(
-                  title: 'Address',
-                  label: "Type your Address",
-                  type: TextInputType.number,
-                  width: context.mediaWidth * 0.9,
-                  numbersMax: 11,
-                ),
-                Input(
-                  title: 'Income',
-                  label: "Type your your average income",
-                  type: TextInputType.number,
-                  width: context.mediaWidth * 0.9,
-                  numbersMax: 4,
-                ),
-                Input(
-                  title: 'Password',
-                  label: "Type your password",
-                  type: TextInputType.text,
-                  width: context.mediaWidth * 0.9,
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      Input(
+                          controller: controller.controlName,
+                          title: 'Name',
+                          label: "Type your name",
+                          type: TextInputType.text,
+                          width: context.mediaWidth * 0.9),
+                      Input(
+                          controller: controller.controlEmail,
+                          title: 'E-mail',
+                          label: "Type your e-mail",
+                          type: TextInputType.text,
+                          width: context.mediaWidth * 0.9),
+                      Input(
+                        controller: controller.controlPhone,
+                        title: 'Phone',
+                        label: "Type your phone",
+                        type: TextInputType.number,
+                        width: context.mediaWidth * 0.9,
+                        numbersMax: 11,
+                      ),
+                      Input(
+                        controller: controller.controlCpf,
+                        title: 'CPF',
+                        label: "Type your CPF",
+                        type: TextInputType.number,
+                        width: context.mediaWidth * 0.9,
+                        numbersMax: 11,
+                      ),
+                      Input(
+                        controller: controller.controlAddress,
+                        title: 'Address',
+                        label: "Type your Address",
+                        type: TextInputType.text,
+                        width: context.mediaWidth * 0.9,
+                      ),
+                      Input(
+                        controller: controller.controlCurrent,
+                        title: 'Current',
+                        label: "Type your your average balance",
+                        type: TextInputType.number,
+                        width: context.mediaWidth * 0.9,
+                        numbersMax: 4,
+                      ),
+                      Input(
+                        controller: controller.controlPassword,
+                        title: 'Password',
+                        label: "Type your password",
+                        type: TextInputType.text,
+                        secureText: true,
+                        width: context.mediaWidth * 0.9,
+                      ),
+                    ],
+                  ),
                 ),
                 GestureDetector(
-                  onTap: () {
-                    Modular.to.navigate('home');
+                  onTap: () async {
+                    await controller.register();
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -100,19 +122,21 @@ class RegisterScreen extends StatelessWidget {
                     Text(
                       "Have account?",
                       style: GoogleFonts.poppins(
-                          textStyle: context.styleModifier.textMediumCommonGray),
+                          textStyle:
+                              context.styleModifier.textMediumCommonGray),
                     ),
                     const SizedBox(
                       width: 5,
                     ),
                     GestureDetector(
                       onTap: () {
-                        Modular.to.navigate('home');
+                        Modular.to.navigate('login');
                       },
                       child: Text(
-                        "Create Account",
+                        "Entre in Account",
                         style: GoogleFonts.poppins(
-                            textStyle: context.styleModifier.textMediumBoldBlack),
+                            textStyle:
+                                context.styleModifier.textMediumBoldBlack),
                       ),
                     )
                   ],

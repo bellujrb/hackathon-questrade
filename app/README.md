@@ -1,16 +1,47 @@
-# app
+# App Mobile Loan 
 
-A new Flutter project.
+This app aims to provide a safe and reliable loan service specifically designed to meet the financial needs of elderly individuals. Our primary focus is on ensuring the safety and well-being of our clients by providing them with a smooth and affordable loan experience.
 
-## Getting Started
+### How to Use the Application on the Mobile
 
-This project is a starting point for a Flutter application.
+Make sure you have Dart and Flutter installed on your machine.
 
-A few resources to get you started if this is your first Flutter project:
+Clone this repository to your local environment.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+git clone https://github.com/bellujrb/hackathon-questrade
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Navigate to the project directory.
+
+```
+cd app
+```
+
+Install the project's dependencies.
+
+```
+flutter pub add
+```
+
+Run the providing application with the following command.
+
+```
+flutter run
+```
+
+# Design Patterns (Mobile)
+- Singleton
+
+# External Packages (Mobile)
+
+- Flutter Modular
+- Google Fonts
+- Http
+- Logger
+
+# Architecture Used (Mobile)
+
+- MVC + repository
+- Modular
+- Singleton

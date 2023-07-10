@@ -9,7 +9,8 @@ import '../../../../styles/colors.dart';
 import '../../request_loan/components_this_screen/custom_toggle.dart';
 
 class RequestLoanCustom extends StatefulWidget {
-  const RequestLoanCustom({Key? key}) : super(key: key);
+  final int? loan;
+  const RequestLoanCustom({Key? key, this.loan}) : super(key: key);
 
   @override
   State<RequestLoanCustom> createState() => _RequestLoanCustomState();
@@ -44,7 +45,7 @@ class _RequestLoanCustomState extends State<RequestLoanCustom> {
               Container(
                 margin: const EdgeInsets.only(top: 10),
                 child: Text(
-                  "R\$",
+                  "USD",
                   style: GoogleFonts.poppins(
                     textStyle: context.styleModifier.textSmallCommonBlack,
                   ),
@@ -54,9 +55,10 @@ class _RequestLoanCustomState extends State<RequestLoanCustom> {
                 width: 5,
               ),
               Text(
-                "2000",
+                "${widget.loan}",
                 style: GoogleFonts.poppins(
-                    textStyle: context.appTextStyles.textBigBoldBlack),
+                  textStyle: context.appTextStyles.textBigBoldBlack,
+                ),
               ),
             ],
           ),
@@ -68,7 +70,9 @@ class _RequestLoanCustomState extends State<RequestLoanCustom> {
               lineHeight: 20.0,
               animationDuration: 2500,
               percent: 1.0,
-              center: const Text("R\$150 until R\$2000"),
+              center: Text(
+                "max value loan ${widget.loan ?? ''}",
+              ),
               progressColor: Colors.green,
             ),
           ),

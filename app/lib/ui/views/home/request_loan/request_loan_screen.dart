@@ -3,15 +3,41 @@ import 'package:app/ui/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:logger/logger.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
 
+import '../../../../core/controller/auth/login_controller.dart';
+import '../../../../core/controller/home/home_controller.dart';
 import '../../../components/header.dart';
 import '../../../components/status_score.dart';
 import 'components_this_screen/request_loan.dart';
 
-class RequestLoanScreen extends StatelessWidget {
+class RequestLoanScreen extends StatefulWidget {
   const RequestLoanScreen({Key? key}) : super(key: key);
 
+  @override
+  State<RequestLoanScreen> createState() => _RequestLoanScreenState();
+}
+
+class _RequestLoanScreenState extends State<RequestLoanScreen> {
+  late final LoginController controller;
+  final home = HomeController();
+  Logger log = Logger();
+
+  int? loanMax;
+
+
+  @override
+  void initState() {
+    super.initState();
+    controller = Modular.get<LoginController>();
+    home.getData().then((_) {
+      setState(() {
+        loanMax = home.loan;
+      });
+      log.i("Request ON - Home");
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +52,9 @@ class RequestLoanScreen extends StatelessWidget {
                 SizedBox(
                   height: context.mediaHeight * 0.03,
                 ),
-                const RequestLoan(),
+                RequestLoan(
+                  loan: loanMax,
+                ),
                 SizedBox(
                   height: context.mediaHeight * 0.03,
                 ),

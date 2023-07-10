@@ -5,14 +5,40 @@ import 'package:app/ui/views/home/joint_loan/components_this_screen/request_loan
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:logger/logger.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
 
+import '../../../../core/controller/auth/login_controller.dart';
+import '../../../../core/controller/home/home_controller.dart';
 import '../../../components/header.dart';
 import '../../../components/status_score.dart';
 
-class JointLoanScreen extends StatelessWidget {
+class JointLoanScreen extends StatefulWidget {
   const JointLoanScreen({Key? key}) : super(key: key);
 
+  @override
+  State<JointLoanScreen> createState() => _JointLoanScreenState();
+}
+
+class _JointLoanScreenState extends State<JointLoanScreen> {
+  late final LoginController controller;
+  final home = HomeController();
+  Logger log = Logger();
+
+  int? loanMax;
+
+
+  @override
+  void initState() {
+    super.initState();
+    controller = Modular.get<LoginController>();
+    home.getData().then((_) {
+      setState(() {
+        loanMax = home.loan;
+      });
+      log.i("Request ON - Home");
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

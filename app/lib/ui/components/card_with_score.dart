@@ -6,7 +6,10 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import '../styles/colors.dart';
 
 class CardWithScore extends StatelessWidget {
-  const CardWithScore({Key? key}) : super(key: key);
+  final int? loan;
+  final int? min;
+  final int? max;
+  const CardWithScore({Key? key, required this.loan, required this.min, required this.max}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +43,15 @@ class CardWithScore extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Available for Loan",
+                    "Your current income from",
                     style: GoogleFonts.poppins(
                         textStyle: context.styleModifier.textMediumCommonWhite),
                   ),
                   Text(
-                    "USD 25,000",
+                    loan != null ? "USD $loan" : "",
                     style: GoogleFonts.poppins(
-                        textStyle: context.styleModifier.textMediumBoldWhite),
+                      textStyle: context.styleModifier.textMediumBoldWhite,
+                    ),
                   ),
                 ],
               ),
@@ -67,9 +71,9 @@ class CardWithScore extends StatelessWidget {
             center: SizedBox(
               width: 60,
               child: Text(
-                "700/1000 in score",
+                "${min ?? ''}/${max ?? ''} in score",
                 style: GoogleFonts.poppins(
-                  textStyle: context.styleModifier.textMediumCommonWhite
+                  textStyle: context.styleModifier.textMediumCommonWhite,
                 ),
               ),
             ),
