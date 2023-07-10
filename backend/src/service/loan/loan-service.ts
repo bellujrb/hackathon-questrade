@@ -135,7 +135,8 @@ export class LoanService extends BaseService {
   }
   async getHomeUser(email: string) {
     const user = await this.repository.getLoanUser(email);
-    let percentage = (user.score / 1000) * 100;
+    const percentage = user.score / 1000;
+    const makePercentage = percentage.toFixed(2);
     const newUser = {
       name: user.name,
       adress: user.adress,
@@ -146,7 +147,7 @@ export class LoanService extends BaseService {
       password: user.password,
       score: user.score,
       loan: user.loan,
-      scorePorcent: Math.floor(percentage),
+      scorePorcent: parseFloat(makePercentage),
     };
     return newUser;
   }

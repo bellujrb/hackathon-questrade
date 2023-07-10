@@ -9,7 +9,7 @@ export const mockGetLoan = {
   score: 916,
   password: '$2b$10$LmCW/67tIXJB2gmhR03ttuOghgXiY.nMMj34rfN8cp3/tDDK.NcCW',
   name: 'string',
-  scorePorcent: 91
+  scorePorcent: '0.91',
 };
 
 export const mockLoanMakeTrue = {
